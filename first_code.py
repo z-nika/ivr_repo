@@ -132,9 +132,9 @@ def get_user_email(email):
     return user
 
 def add_user(user_id, password, login, email, gender, age, num_of_people, income, memo, memo_day, alert, days_before_alert, photo):
-	connection = engine.connect()
-	trans = connection.begin()
-	connection.execute("INSERT INTO user_ivr(user_id, password, login, email, gender, age, num_of_people, income, influence, memo, memo_day, alert, days_before_alert, photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 1, %s, %s, %s, %s, %s)", (user_id, password, login, email, gender, age, num_of_people, income, memo, memo_day, alert, days_before_alert, photo))
-	trans.commit()
-	connection.close()
+    connection = engine.connect()
+    trans = connection.begin()
+    connection.execute("INSERT INTO user_ivr(user_id, password, login, email, gender, age, num_of_people, income, influence, memo, memo_day, alert, days_before_alert, photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 1, %s, %s, %s, %s, %s)", (user_id, password, login, email, gender, age, num_of_people, income, memo, memo_day, alert, days_before_alert, photo))
+    trans.commit()
+    connection.close()
 	return
